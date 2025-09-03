@@ -15,7 +15,10 @@ rust_shared_library(
     proc_macro_deps = [
         "@crate_index//:napi-derive",
     ],
-    rustc_flags = ["--codegen=link-arg=-undefined", "--codegen=link-arg=dynamic_lookup"],
+    rustc_flags = select({
+        "@platforms//os:macos": ["--codegen=link-arg=-undefined", "--codegen=link-arg=dynamic_lookup"],
+        "//conditions:default": [],
+    }),
 )
 
 # Need to rename the file from .so/.dylib to .node for Node.js

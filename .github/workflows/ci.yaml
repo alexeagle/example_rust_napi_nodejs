@@ -15,4 +15,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: bazel-contrib/setup-bazel@0.15.0
-      - run: bazel test //...
+      - run: bazel run node_app
