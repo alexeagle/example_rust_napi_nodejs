@@ -5,6 +5,7 @@ rust_shared_library(
     srcs = ["lib.rs"],
     deps = [
         "@crate_index//:napi",
+        "@rules_nodejs//nodejs/headers:current_node_cc_headers",
     ],
     proc_macro_deps = [
         "@crate_index//:napi-derive",
