@@ -29,7 +29,7 @@ importers:
 
   node_app:
     dependencies:
-      minus:
+      lib:
         specifier: workspace:*
         version: link:../src
     devDependencies:

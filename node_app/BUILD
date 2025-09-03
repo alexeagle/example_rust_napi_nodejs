@@ -8,7 +8,7 @@ ts_project(
     name = "index",
     srcs = ["index.ts"],
     deps = [
-        ":node_modules/minus",
+        ":node_modules/lib",
         ":node_modules/@types",
     ],
     tsconfig = {},

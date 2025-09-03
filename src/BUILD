@@ -7,7 +7,7 @@ load("@npm//:defs.bzl", "npm_link_all_packages")
 npm_link_all_packages(name = "node_modules")
 rust_shared_library(
     name = "minus_binding",
-    srcs = ["minus.rs"],
+    srcs = ["lib.rs"],
     deps = [
         "@crate_index//:napi",
         "@rules_nodejs//nodejs/headers:current_node_cc_headers",
@@ -22,13 +22,13 @@ rust_shared_library(
 copy_file(
     name = "copy_binding",
     src = ":minus_binding",
-    out = "build/minus.node",
+    out = "build/lib.node",
     visibility = ["//visibility:public"],
 )
 
 ts_project(
     name = "ts_wrapper",
-    srcs = ["minus.ts"],
+    srcs = ["lib.ts"],
     declaration = True,
     deps = [
         ":node_modules/bindings",
@@ -39,6 +39,6 @@ ts_project(
 
 js_library(
     name = "pkg",
-    srcs = ["minus.js", "minus.d.ts", "package.json"],
+    srcs = ["lib.js", "lib.d.ts", "package.json"],
     visibility = ["//visibility:public"],
 )

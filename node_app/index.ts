@@ -1,7 +1,7 @@
-import { minus } from "minus";
+import { lib } from "lib";
 
 function math_operation(a: number, b: number): number {
-    return minus.subtract(a, b);
+    return lib.subtract(a, b);
 }
 
 // Example usage
