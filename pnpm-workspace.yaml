@@ -1,4 +1,5 @@
 # See https://pnpm.io/pnpm-workspace_yaml
 packages:
- - packages/*
+ - src
+ - node_app
  - tools

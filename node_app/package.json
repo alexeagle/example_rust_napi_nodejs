@@ -1,0 +1,10 @@
+{
+    "name": "node_app",
+    "private": true,
+    "dependencies": {
+        "minus": "workspace:*"
+    },
+    "devDependencies": {
+        "@types/node": "^20.0.0"
+    }
+}
