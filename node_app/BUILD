@@ -17,5 +17,4 @@ ts_project(
 js_binary(
     name = "node_app",
     entry_point = "index.js",
-    data = ["//src:copy_binding"]
 )

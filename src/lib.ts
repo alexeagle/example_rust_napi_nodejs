@@ -1,10 +1,14 @@
 /**
  * Wrapper around the Rust library in this package
  */
-// TODO: codegen from adder.h to avoid manually keeping them in sync
+// Load the native addon directly from the library's location
+import * as path from 'path';
+
+// TODO: codegen from rust to avoid manually keeping them in sync
+// maybe https://crates.io/crates/tslink
 declare interface Lib {
     subtract: (first: number, second: number) => number;
 }
 
-// Load the native addon directly from the Bazel runfiles
-export const lib: Lib = require('bindings')('lib');
+// Resolve the lib.node file relative to this library's location
+export const lib: Lib = require(path.resolve(__dirname, 'lib.node'));

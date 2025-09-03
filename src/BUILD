@@ -25,7 +25,7 @@ rust_shared_library(
 copy_file(
     name = "copy_binding",
     src = ":minus_binding",
-    out = "build/lib.node",
+    out = "lib.node",
     visibility = ["//visibility:public"],
 )
 
@@ -34,7 +34,6 @@ ts_project(
     srcs = ["lib.ts"],
     declaration = True,
     deps = [
-        ":node_modules/bindings",
         ":node_modules/@types",
     ],
     visibility = ["//visibility:public"],
@@ -42,6 +41,6 @@ ts_project(
 
 js_library(
     name = "pkg",
-    srcs = ["lib.js", "lib.d.ts", "package.json"],
+    srcs = ["lib.js", "lib.d.ts", "lib.node","package.json"],
     visibility = ["//visibility:public"],
 )
