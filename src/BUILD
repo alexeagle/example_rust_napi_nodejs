@@ -41,6 +41,6 @@ ts_project(
 
 js_library(
     name = "pkg",
-    srcs = ["lib.js", "lib.d.ts", "lib.node","package.json"],
+    srcs = ["lib.js", "lib.d.ts", "lib.node", "package.json"],
     visibility = ["//visibility:public"],
 )

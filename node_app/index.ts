@@ -1,8 +1,8 @@
 import { lib } from "lib";
 
-function math_operation(a: number, b: number): number {
-    return lib.subtract(a, b);
+function math_operation(): string {
+    return lib.hello("Alex");
 }
 
 // Example usage
-console.log(`10 - 5 = ${math_operation(10, 5)}`);
+console.log(`10 - 5 = ${math_operation()}`);

@@ -7,7 +7,7 @@ import * as path from 'path';
 // TODO: codegen from rust to avoid manually keeping them in sync
 // maybe https://crates.io/crates/tslink
 declare interface Lib {
-    subtract: (first: number, second: number) => number;
+    hello: (name: string) => string;
 }
 
 // Resolve the lib.node file relative to this library's location

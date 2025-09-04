@@ -17,4 +17,5 @@ ts_project(
 js_binary(
     name = "node_app",
     entry_point = "index.js",
+    data = [":index"],
 )
